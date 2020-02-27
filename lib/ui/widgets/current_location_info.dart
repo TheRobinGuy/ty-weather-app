@@ -30,12 +30,12 @@ class CurrentLocationInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: new Container(
-        constraints: BoxConstraints(maxHeight: 750.0, minHeight: 600.0),
+        constraints: BoxConstraints(maxHeight: 380.0, minHeight: 360.0),
         child: Column(
           children: <Widget>[
             Expanded(
                 child: CurrentDay(
-              timestamp: timestamp,
+              timestamp: 1582795595,
             )),
             Row(
               children: <Widget>[
@@ -61,15 +61,15 @@ class CurrentLocationInfo extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           TemperatureInfo(
-                              temperature: temperature,
-                              isCelcius: isCelcius,),
+                              temperature: 267,
+                              isCelcius: false,),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            location,
+                            "Location",
                             style: Theme.of(context).textTheme.title,
                           ),
                         ],
@@ -83,36 +83,13 @@ class CurrentLocationInfo extends StatelessWidget {
               constraints: BoxConstraints(maxHeight: 50.0, minHeight: 40.0),
             ),
             InfoTable(
-                mainTitle: "Wind : ",
-                firstTitle: "Speed",
-                firstTitleContent: windSpeed.toString(),
-                secondTitle: "Gust",
-                secondTitleContent: "17kts",
-                thirdTitle: "Direction",
-                thirdTitleContent: "${windDirection.toString()} º"),
-            Container(
-              constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
-            ),
-            InfoTable(
-                mainTitle: "Percipitation : ",
-                firstTitle: "Fall",
-                firstTitleContent: "18mm",
-                secondTitle: " ",
-                secondTitleContent: " ",
-                thirdTitle: "Chance",
-                thirdTitleContent: "56%"),
-            Container(
-              constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
-            ),
-            InfoTable(
-                mainTitle: "All Day : ",
-                firstTitle: "Moon",
-                firstTitleContent: "Full",
-                secondTitle: " ",
-                secondTitleContent: " ",
-                thirdTitle: "Tide",
-                thirdTitleContent:
-                    "09:00 | HIGH \n 15:00 | LOW \n 21:00 | HIGH"),
+                mainTitle: "Title : ",
+                firstTitle: "Column 1",
+                firstTitleContent: "Content 1",
+                secondTitle: "Column 2",
+                secondTitleContent: "Content 2",
+                thirdTitle: "Column 3",
+                thirdTitleContent: "Content 3"),
           ],
         ),
       ),
