@@ -7,7 +7,7 @@ class InfoTable extends StatelessWidget {
   final String secondTitle;
   final String secondTitleContent;
   final String thirdTitle;
-  final String thirdTitleContent;
+  final Widget thirdTitleContent;
 
   InfoTable({
     @required this.mainTitle,
@@ -36,9 +36,9 @@ class InfoTable extends StatelessWidget {
                   decoration: BoxDecoration(
                       border: Border(
                           bottom:
-                              BorderSide(color: Color(0xFF757575), width: 2.0),
+                              BorderSide(color: Color(0xFF000000), width: 2.0),
                           top: BorderSide(
-                              color: Color(0xFF757575), width: 2.0))),
+                              color: Color(0xFF000000), width: 2.0))),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -68,9 +68,8 @@ class InfoTable extends StatelessWidget {
                       secondTitleContent,
                       style: Theme.of(context).textTheme.caption,
                     ),
-                    Text(
-                      thirdTitleContent,
-                      style: Theme.of(context).textTheme.caption,
+                    Container(
+                      child: thirdTitleContent,
                     ),
                   ],
                 )

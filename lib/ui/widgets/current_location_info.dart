@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/ui/widgets/current_day.dart';
 import 'package:weather_app/ui/widgets/temperature_info.dart';
+import 'package:weather_app/utils/unitConversion.dart';
 
 import 'info_table.dart';
 
@@ -30,7 +31,7 @@ class CurrentLocationInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: new Container(
-        constraints: BoxConstraints(maxHeight: 750.0, minHeight: 600.0),
+        constraints: BoxConstraints(maxHeight: 685.0, minHeight: 600.0),
         child: Column(
           children: <Widget>[
             Expanded(
@@ -61,8 +62,9 @@ class CurrentLocationInfo extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           TemperatureInfo(
-                              temperature: temperature,
-                              isCelcius: isCelcius,),
+                            temperature: temperature,
+                            isCelcius: isCelcius,
+                          ),
                         ],
                       ),
                       Row(
@@ -80,16 +82,17 @@ class CurrentLocationInfo extends StatelessWidget {
               ],
             ),
             Container(
-              constraints: BoxConstraints(maxHeight: 50.0, minHeight: 40.0),
+              constraints: BoxConstraints(maxHeight: 5.0, minHeight: 4.0),
             ),
             InfoTable(
                 mainTitle: "Wind : ",
                 firstTitle: "Speed",
-                firstTitleContent: windSpeed.toString(),
+                firstTitleContent: " $windSpeed kts",
                 secondTitle: "Gust",
-                secondTitleContent: "17kts",
+                secondTitleContent: "17 kts",
                 thirdTitle: "Direction",
-                thirdTitleContent: "${windDirection.toString()} º"),
+                thirdTitleContent:
+                    getCompassDirectionFromDrgrees(windDirection, context)),
             Container(
               constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
             ),
@@ -100,7 +103,10 @@ class CurrentLocationInfo extends StatelessWidget {
                 secondTitle: " ",
                 secondTitleContent: " ",
                 thirdTitle: "Chance",
-                thirdTitleContent: "56%"),
+                thirdTitleContent: Text(
+                  "56%",
+                  style: Theme.of(context).textTheme.caption,
+                )),
             Container(
               constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
             ),
@@ -111,8 +117,10 @@ class CurrentLocationInfo extends StatelessWidget {
                 secondTitle: " ",
                 secondTitleContent: " ",
                 thirdTitle: "Tide",
-                thirdTitleContent:
-                    "09:00 | HIGH \n 15:00 | LOW \n 21:00 | HIGH"),
+                thirdTitleContent: Text(
+                  "09:00 | HIGH \n 15:00 | LOW \n 21:00 | HIGH",
+                  style: Theme.of(context).textTheme.caption,
+                )),
           ],
         ),
       ),
