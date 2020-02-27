@@ -97,7 +97,7 @@ class CurrentLocationInfo extends StatelessWidget {
               constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
             ),
             InfoTable(
-                mainTitle: "Percipitation : ",
+                mainTitle: "Precipitation : ",
                 firstTitle: "Fall",
                 firstTitleContent: "18mm",
                 secondTitle: " ",
